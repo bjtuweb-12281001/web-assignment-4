@@ -1,0 +1,86 @@
+@CHARSET "UTF-8";
+body{
+	background-color: black;
+	font-family: 微软雅黑;
+	height: auto;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+a{
+	text-decoration: none;
+	color:gray;
+}
+a:HOVER {
+	color:white;
+}
+.frm{
+	margin:auto;
+	width: 966px;
+	height: auto;
+	color: white;
+	text-align: center;
+}
+.frm2{
+	margin:auto;
+	width: 566px;
+	color: white;
+}
+.frm3{
+	margin:auto;
+	width: 1200px;
+}
+h1{
+	color: white;
+}
+h3{
+	color: red;
+}
+.footer{
+	margin:auto;
+	text-align: center;
+	color: gray;
+}
+.footer small:HOVER {
+	color:white;
+}
+input[type="radio"]:ACTIVE{
+	color:red;
+}
+.alert{
+	float: left;
+	overflow: auto;
+	color:red;
+	padding-left: 50px;
+	display:none;
+}
+.alert2{
+	float: left;
+	overflow: auto;
+	color:red;
+	padding-left: 50px;
+	display:none;
+}
+.alert3{
+	float: left;
+	overflow: auto;
+	color:red;
+	padding-left: 50px;
+	display:none;
+}
+.register{
+	position: fixed;
+	right: 200px;
+	top: 15px;
+}
+.login{
+	position: fixed;
+	right: 200px;
+	top: 15px;
+}
+.logout{
+	position: fixed;
+	right: 200px;
+	top: 15px;
+}

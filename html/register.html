@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Register</title>
+
+<link href="./css/common.css" rel="stylesheet" type="text/css"/>
+<link href="./css/register.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="./js/jquery.js"></script>
+
+<script type="text/javascript">
+	function postinfo(){ 
+			var username = document.registerinfo.username.value;
+			var userpsw = document.registerinfo.userpsw.value;
+			var usergender = document.registerinfo.sex.value;
+			var usernickname = document.registerinfo.usernickname.value;
+			
+			$.post("./php/regpost.php",
+					{
+						username:username,
+						userpsw:userpsw,
+						usergender:usergender,
+						usernickname:usernickname
+					},
+					function(data,status){
+						alert(data);
+						window.location.href='./index.html';
+					});
+			return false;
+		} 
+	function checkName(){
+			var username = document.registerinfo.username.value;
+			$.post("./php/check.php",
+					{
+						username:username
+					},
+					function(data,status){
+						if(data == 1){
+							$(".username-text").focus();
+							$(".tip1").empty();
+							$(".tip1").append("<img src='./img/cancel.png'>");
+						}
+						else if(username != ""){
+							$(".tip1").empty();
+							$(".tip1").append("<img src='./img/ok.png'>");
+						}
+						else if(username == ""){
+							$(".tip1").empty();
+						}
+					});
+			return false;
+	}
+	function checkName(){
+		var username = document.registerinfo.username.value;
+		$.post("./php/check.php",
+				{
+					username:username
+				},
+				function(data,status){
+					if(data == 1){
+						$(".username-text").focus();
+						$(".tip1").empty();
+						$(".tip1").append("<img src='./img/cancel.png'>");
+					}
+					else if(username != ""){
+						$(".tip1").empty();
+						$(".tip1").append("<img src='./img/ok.png'>");
+					}
+					else if(username == ""){
+						$(".tip1").empty();
+					}
+				});
+		return false;
+}
+</script>
+
+</head>
+<body>
+	<div class="frm2">
+		<div class="login"><a href="index.html">登录</a></div>
+		<div class="title"><h1>用户注册</h1></div>
+		<div style="text-align: center">
+		<div class="mid">
+				<form name="registerinfo" onsubmit="return postinfo()" method="post">
+					<div class="username"><div class="username-title">用户名</div><input type="text" value="" class="username-text" name="username" onblur="return checkName()"><div class="tip tip1"></div></div>
+					<div class="usernickname"><div class="usernickname-title">昵 称</div><input type="text" value="" class="usernickname-text" name="usernickname"><div class="tip tip2"></div></div>
+					<div class="userpsw"><div class="userpsw-title">密    码</div><input type="password" value="" class="userpsw-text" name="userpsw"><div class="tip tip3"></div></div>
+					<div class="gender">♂男生<input type="radio" name="sex" value="m" />
+					   &nbsp ♀女生<input type="radio" name="sex" value="f" />
+					   &nbsp ☆外星人<input type="radio" name="sex" value="a" /></div>
+					<div class="btn"><input type="submit" value="REGISTER" class="submit"></div>
+				</form>
+		</div>
+		</div>
+		<div class="alert2">用户名不能为空！</div>
+		<div class="alert3">密码不能为空！</div>
+	</div>
+</body>
+</html>
