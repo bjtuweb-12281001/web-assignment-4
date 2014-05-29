@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="icon" href="./img/favicon.ico" mce_href="./img/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="./img/favicon.ico" mce_href="./img/favicon.ico" type="image/x-icon"> 
+
+<script type="text/javascript" src="./js/jquery.js"></script>
+<link href="./css/common.css" rel="stylesheet" type="text/css"/>
+<link href="./css/chatroom.css" rel="stylesheet" type="text/css"/>
+
+<title>Whisper.</title>
+
+<script type="text/javascript">
+	function fresh(){
+		var info = "";
+	
+		$.post("./php/postinfo.php",
+				{
+					postinfo: info
+				},
+				function(data,status){
+						$(".centerpnl").empty();
+						$(".centerpnl").prepend(data);
+						
+						var height = $(".centerpnl").height();
+						$(".leftpnl").height(height+100);
+						window.scrollTo(0,height);
+				});
+		
+		return false;
+	}
+	function postinfo(){ 
+		var info = document.pinfo.info.value;
+		if(info.length !=0){
+			$.post("./php/postinfo.php",
+					{
+						postinfo: info
+					},
+					function(data,status){
+							$(".centerpnl").empty();
+							$(".in").val("");//发送成功
+							$(".centerpnl").append(data);
+							
+							var height = $(".centerpnl").height();
+							$(".leftpnl").height(height + 100);
+							window.scrollTo(0,height);
+					});
+		}
+		else{
+			alert("内容不能为空！");
+			var height = $(".centerpnl").height();
+			window.scrollTo(0,height);
+		}
+		
+		return false;
+	} 
+</script>
+
+</head>
+<body onload="fresh();setInterval(fresh,5000)">
+	<div class="frm3">
+		<div class="logout"><a href="./php/logout.php">LOGOUT</a></div>	
+		<div class="leftpnl">
+			<div class="logo_small">Whisper.</div>
+			<div class="currentuser"><a href="./html/update.html"># 修改个人信息  #</a></div>
+			<div class="topic"><a href="./html/topiclist.html"># TOPIC #</a></div>
+		</div>
+		<div class="centerpnl"></div>
+	</div>
+	<form name="pinfo" onsubmit="return postinfo()" method="post">
+		<div class="speak"><textarea class="in" name="info"></textarea><input type="submit" value="SEND" class="submit"></div>
+	</form>
+</body>
+</html>

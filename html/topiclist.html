@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<script type="text/javascript" src="../js/jquery.js"></script>
+<link href="../css/common.css" rel="stylesheet" type="text/css"/>
+<link href="../css/topic.css" rel="stylesheet" type="text/css"/>
+<title>Topic_List</title>
+
+<script type="text/javascript">
+	function load(){
+		document.getElementById("title").innerHTML="#  TOPIC LIST  #";
+		$.post("../php/topic.php",
+				{
+				},
+				function(data,status){;
+					$(".list").append("<table><tr class='deep'><th>序号</th><th>标题</th><th>类型</th><th>详细内容</th><th>发起人</th></tr>" + data + "</table>");
+				});
+		return false;
+	}
+</script>
+</head>
+<body onload="load();"> 
+	<div class="frm2">
+		<div id="title"></div><a class = "back" onclick="history.go(-1)">返回</a><br >
+		<div class="list"></div>
+	</div>
+</body>
+</html>

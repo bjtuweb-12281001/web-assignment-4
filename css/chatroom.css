@@ -1,0 +1,152 @@
+@CHARSET "UTF-8";
+
+.leftpnl{
+	position: fixed;
+	float: left;
+	width: 15%;
+	min-height:559px;
+	height: 559px;
+	overflow-x: hidden;
+	background-color:#111;
+}
+.logo_small{
+	padding: 25px;	
+	font-size: 30px;
+	color: #aaa;
+	border-bottom: 1px solid gray;
+}
+.logo_small:HOVER {
+	animation: myani 0.5s;
+	animation-iteration-count: 1;
+	-webkit-animation: myani 0.5s;
+	-webkit-animation-iteration-count: 1;
+	color: white;
+}
+@keyframes myani{
+0%   {color: #aaa;}
+100% {color: white;}
+}
+@-webkit-keyframes myani{
+0%   {color: #aaa;}
+100% {color: white;}
+}
+.currentuser{
+	padding: 5px;	
+	font-size: 15px;
+	color: #fff;
+	height: 80px;
+	border-bottom: 1px solid gray;
+}
+.topic{
+	padding: 5px;	
+	font-size: 15px;
+	color: #fff;
+	height: auto;
+}
+.centerpnl{
+	overflow-x: hidden;
+	float: left;
+	height: auto;
+	width: 84%;
+	padding-top: 10px;
+	padding-left: 200px;
+	padding-bottom: 150px;
+}
+.message{
+	float:left;
+	width:100%;
+	padding: 10px;
+	
+}
+.icon{
+	border-radius: 3px;
+	box-shadow: 0px 0px 15px #FFF;
+}
+.nickname{
+	text-decoration: none;
+	color:gray;
+	width: 100%;
+}
+.nickname:HOVER{
+	color:white;
+}
+.user{
+	float: left;
+	width: 65px;
+	height: 65px;
+	padding: 15px;
+	text-align: center;
+}
+.text{
+	position:relative;
+	color:white;
+	margin-top:15px;
+	float: left;
+	width: auto;
+	height: auto;
+	padding: 10px;
+	background-color: #64A7FA;
+	box-shadow: 0px 0px 15px #64A7FA;/*235DF4*/
+	border-radius: 5px;
+	min-height: 30px;
+	word-break:break-all;
+	max-width: 67%;
+}
+.cor{
+	width:0; 
+    height:0; 
+    font-size:0; 
+    border-width:10px; 
+    border-style:solid; 
+    border-color: transparent #64A7FA transparent transparent; 
+    overflow:hidden; 
+	position: absolute;
+	left:-19px;
+}
+.speak{
+	position:fixed;
+	bottom:0px;
+	width:100%;
+	height:100px;
+	background-color: #444;
+	border-top: 1px solid gray;
+	padding-top: 5px;
+	padding-left: 15%;
+	
+}
+.in{
+	position:relative;
+	float: left;
+	width: 70%;
+	height:75%;
+	background-color: #222;
+	border: 0px solid gray;
+	box-shadow: 0px 0px 5px #129DF3;/*235DF4*/
+	color: white;
+	max-height: 75%;
+	max-width: 70%;
+	min-height: 75%;
+	min-width: 70%;
+	font-size: 18px;
+	font-family: 微软雅黑;
+	border-radius: 2px;
+}
+.in:FOCUS {
+	box-shadow: 0px 0px 15px #129DF3;/*235DF4*/
+}
+.submit{
+	position:absolute;
+	margin-left:15px;
+	float: left;
+	height: 80px;
+	width: 80px;
+	color: white;
+	font-size: 20px;
+	border:0px;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0px 0px 15px #235DF4; 
+	background-color:  #43ADF4;
+}
+.submit:HOVER{
+	background-color: #235DF4;
+}
