@@ -1,6 +1,0 @@
-RewriteEngine on
-RewriteRule index.html php/index.php
-RewriteRule register.html php/register.php
-RewriteRule chatroom.html php/chatroom.php
-RewriteRule logout.html php/logout.php
-ErrorDocument 404 /html/error.html
